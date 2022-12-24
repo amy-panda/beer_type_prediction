@@ -1,7 +1,7 @@
 beer_type_prediction
 ==============================
 
-A short description of the project.
+This project used the dataset of beer reviews from BeerAdvocates and focused on the prediction of the top 20 beer styles by training a custom neural network model and deploying the model with FastAPI on Heroku.
 
 Project Organization
 ------------
@@ -16,12 +16,13 @@ Project Organization
     │   └── raw            <- The original, immutable data dump.
     │
     ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
+    │   ├── sc_model       <- The model for scaling the data
+    │   ├── le_model       <- The model for label encoding the target variable
+    │   └── pytorch_multi_beer    <- The best neural network model
     │
     ├── models             <- Trained and serialized models, model predictions, or model summaries
     │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
+    ├── notebooks          <- Jupyter notebooks `pytorch` for data preprocessing and pytorch modelling
     │
     ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
     │
@@ -36,6 +37,7 @@ Project Organization
     │   ├── __init__.py    <- Makes src a Python module
     │   │
     │   ├── data           <- Scripts to download or generate data
+    │   │   ├── sets.py
     │   │   └── make_dataset.py
     │   │
     │   ├── features       <- Scripts to turn raw data into features for modeling
@@ -43,8 +45,9 @@ Project Organization
     │   │
     │   ├── models         <- Scripts to train models and then use trained models to make
     │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
+    │   │   ├── pytorch.py
+    │   │   └── performance.py
+    │   │   └── null.py    
     │   │
     │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
     │       └── visualize.py
